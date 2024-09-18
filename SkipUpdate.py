@@ -1,6 +1,8 @@
 import wexpect
 import os
 import re
+import sys
+import time
 from pathlib import Path
 
 NotValid1 = True
@@ -139,8 +141,23 @@ for idi, i in enumerate(DB):
 
 # Error if empty
 if not ManifestIndex:
-    print('Error SteamCMD gave no data please run app_info_print {} manually to load the data and try again'.format(appid))
-    input('\n Press Enter to exit...')
+    print('Error SteamCMD gave no data please run login anonymous and app_info_print {} manually to load the data and try again'.format(appid))
+    Attempt = input('\n Press Enter to exit or press y to attempt auto fix:\n')
+    if Attempt == 'y':
+        child = wexpect.spawn("cmd")
+        child.expect('>')
+        appid = filename.split("_")[1].rstrip()
+        print('Starting SteamCMD... \n')
+        arg = "steamcmd.exe +login anonymous +app_info_request {}".format(appid)
+        print('>' + arg + '... \n')
+        child.sendline(arg)
+        T = 0
+        print('Please wait: ')
+        while T < 40:
+            print(40-T,' Seconds', end="\r", flush=True)
+            time.sleep(1)
+            T += 1
+        child.close()
     exit()
 
 # Compare and replace old manifest
