@@ -8,6 +8,11 @@ NotValid2 = True
 IOdata = ['\n']*10
 separator = '\n-------------------------------------\n'
 
+try: 
+    with open(Path(__file__).with_name('path.txt'), 'r'): pass
+except FileNotFoundError:
+    with open(Path(__file__).with_name('path.txt'), 'w'): pass
+
 # Path to file
 while NotValid1:
     x = input('Use last directory? (y/n) ')
@@ -58,9 +63,14 @@ print(separator)
 filepath = os.path.normpath(directory) + "\\" + filename
 
 # Read manifest file as list and search for manifest
-with open(filepath, 'r') as file:
-    content = file.readlines()
-    index = [x for x in range(len(content)) if 'manifest' in content[x].lower()]
+try:
+    with open(filepath, 'r') as file:
+        content = file.readlines()
+        index = [x for x in range(len(content)) if 'manifest' in content[x].lower()]
+except FileNotFoundError:
+    print('Error: Path does not exist!\n{}\n'.format(filepath))
+    input('\n Press Enter to exit...')
+    exit()
 
 # Check if its already updated
 for i in content:
