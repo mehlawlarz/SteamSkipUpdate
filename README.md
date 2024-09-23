@@ -12,7 +12,7 @@ Check out [this](https://steamcommunity.com/sharedfiles/filedetails/?id=29018603
 
 ## Installation
 
-Create a folder and slap both the script and SteamCMD into it and follow the instructions on the terminal!
+First, install wexpect with pip install wexpect. Create a folder and slap both the script and SteamCMD into it and follow the instructions on the terminal!
 
 ## Requirements:
 - wexpect https://github.com/raczben/wexpect/tree/master
