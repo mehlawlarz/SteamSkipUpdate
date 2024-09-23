@@ -141,9 +141,12 @@ for idi, i in enumerate(DB):
 
 # Error if empty
 if not ManifestIndex:
+    debug = False
     print('Error SteamCMD gave no data please run login anonymous and app_info_print {} manually to load the data and try again'.format(appid))
     Attempt = input('\n Press Enter to exit or press y to attempt auto fix:\n')
-    if Attempt == 'y':
+    if Attempt in ('y','debug'):
+        if Attempt == 'debug':
+            debug = True
         child = wexpect.spawn("cmd")
         child.expect('>')
         appid = filename.split("_")[1].rstrip()
@@ -157,7 +160,16 @@ if not ManifestIndex:
             print(40-T,' Seconds', end="\r", flush=True)
             time.sleep(1)
             T += 1
-        child.close()
+        if debug:
+            arg = "steamcmd.exe +login anonymous +app_info_request {} +app_info_print {} +logoff +quit".format(appid, appid)
+            print('>' + arg + '... \n')
+            child.sendline(arg)
+            child.expect('>')
+            print(child.before)
+            child.sendline("exit")
+            child.wait()
+            child.close()
+            input('\n Press Enter to exit')
     exit()
 
 # Compare and replace old manifest
