@@ -160,7 +160,6 @@ if not ManifestIndex:
             print(40-T,' Seconds', end="\r", flush=True)
             time.sleep(1)
             T += 1
-        child.wait()
         child.close()
         if debug:
             arg = "steamcmd.exe +login anonymous +app_info_request {} +app_info_print {} +logoff +quit".format(appid, appid)
