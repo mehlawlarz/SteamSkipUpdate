@@ -165,6 +165,7 @@ if not ManifestIndex:
             arg = "steamcmd.exe +login anonymous +app_info_request {} +app_info_print {} +logoff +quit".format(appid, appid)
             print('>' + arg + '... \n')
             child = wexpect.spawn("cmd")
+            child.expect('>')
             child.sendline(arg)
             child.expect('>')
             print(child.before)
