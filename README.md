@@ -10,6 +10,8 @@ Don't know what Appmanifest is?
 
 Check out [this](https://steamcommunity.com/sharedfiles/filedetails/?id=2901860378) and you will understand what this script does in no time!
 
+# Always backup your files!!!
+
 ## Installation
 
 First, install wexpect with pip install wexpect.
