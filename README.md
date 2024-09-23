@@ -4,7 +4,7 @@ A lil python script to update Appmanifest with SteamCMD for Python 3.x
 
 Tired of steam updates ruining your meticulously modded games? Give this a try!
 
-This bad boy auto fetches the latest buildid and manifest from SteamCMD and slap it into your Appmanifest of choice!
+This bad boy auto fetches the latest Build ID and manifest from SteamCMD and slap it into your Appmanifest of choice!
 
 Don't know what Appmanifest is? 
 
