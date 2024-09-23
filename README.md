@@ -22,5 +22,5 @@ Then, create a folder and slap both the script and SteamCMD into it and run the 
 
 ## Known issues
 - SteamCMD will output old or no data sometimes when running in automated mode.
-- If autofix does not fix no data follow the prompt to manually load data.
-- If you are getting outdated data delete appcache and try again, these are issues with SteamCMD and I can't do anything about them.
+- If autofix does not fix the no Steam data error follow the prompt to manually load Steam data.
+- If you are getting outdated data delete the appcache folder and try again, these are issues with SteamCMD and I can't do anything about them.
