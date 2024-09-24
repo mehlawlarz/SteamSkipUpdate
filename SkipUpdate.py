@@ -172,9 +172,10 @@ if not ManifestIndex:
             child.sendline("exit")
             child.wait()
             child.close()
-            input('\n Press Enter to exit')
+            input('\n Press Enter to exit...')
         else:
-            input('\n Please rerun the script')
+            print('\n Please rerun the script')
+            input('\n Press Enter to exit...')
     exit()
 
 # Compare and replace old manifest
