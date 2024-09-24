@@ -29,4 +29,4 @@ Then, create a folder and slap both the script and SteamCMD into it and run the 
 - Wukong has a special appmanifest format and I have no clue why (It doesn't work).
 
 ## When reporting issues please include output logs
-Also if you are still getting SteamCMD no output error after auto + manual fix run the autofix with "debug" with no quotes and add the output to the report.
+Also if you are still getting SteamCMD no output error after running auto + manual fix, run the autofix with "debug" with no quotes and add the output to the report.
