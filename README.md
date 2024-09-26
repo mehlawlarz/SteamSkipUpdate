@@ -24,9 +24,9 @@ Then, create a folder and slap both the script and SteamCMD into it and run the 
 
 ## Known issues
 - SteamCMD will output old or no data sometimes when running in automated mode.
-- If autofix does not fix the no Steam data error follow the prompt to manually load Steam data.
+- If autofix does not fix the no Steam data error, follow the prompt to manually load Steam data.
 - If you are getting outdated data delete the appcache folder and try again, these are issues with SteamCMD and I can't do anything about them.
-- Wukong has a special appmanifest format and I have no clue why (It doesn't work).
+- Wukong has a special appmanifest format and I have no clue why (It doesn't work with the script).
 
 ## When reporting issues please include output logs
 Also if you are still getting SteamCMD no output error after running auto + manual fix, run the autofix with "debug" with no quotes and add the output to the report.
