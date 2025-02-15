@@ -118,7 +118,7 @@ for i in range(len(DB)):
         exit()
 
 # Cleanup the list for search
-Junk = [x for x in range(len(DB)) if 'logging off current session' in DB[x].lower()]
+Junk = [x for x in range(len(DB)) if 'depots' in DB[x].lower()]
 for i in range(Junk[0]):
     DB[i] = ''
 DB.pop(-1)
